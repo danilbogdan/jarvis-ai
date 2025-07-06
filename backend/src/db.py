@@ -1,6 +1,6 @@
 from sqlmodel import Session, create_engine, select
 
-from src.agents.models import Conversation  # noqa
+from src.chat.models import Conversation  # noqa
 from src.auth import crud
 from src.auth.models import User, UserCreate
 from src.config import settings

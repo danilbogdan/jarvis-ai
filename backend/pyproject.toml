@@ -2,7 +2,7 @@
 name = "jarvis_ai"
 version = "0.1.0"
 description = ""
-requires-python = ">=3.10,<4.0"
+requires-python = ">=3.10,<3.13"
 dependencies = [
     "fastapi[standard]<1.0.0,>=0.114.2",
     "python-multipart<1.0.0,>=0.0.7",
@@ -22,6 +22,12 @@ dependencies = [
     "sentry-sdk[fastapi]<2.0.0,>=1.40.6",
     "pyjwt<3.0.0,>=2.8.0",
     "openai>=1.70.0",
+    "pydantic-ai>=0.0.15",
+    "anthropic>=0.37.0",
+    "google-generativeai>=0.8.0",
+    "groq>=0.11.0",
+    "cohere>=5.12.0",
+    "mistralai>=1.2.0",
 ]
 
 [tool.uv]

@@ -111,10 +111,38 @@ class Settings(BaseSettings):
 
     # AI Configuration
     OPENAI_API_KEY: str = ""
-    OPENAI_MODEL: str = "gpt-4"
+    OPENAI_MODEL: str = "gpt-4o"
     OPENAI_MAX_TOKENS: int = 2000
+    
+    # Anthropic Configuration
+    ANTHROPIC_API_KEY: str = ""
+    ANTHROPIC_MODEL: str = "claude-3-5-sonnet-20241022"
+    
+    # Google/Gemini Configuration
+    GOOGLE_API_KEY: str = ""
+    GOOGLE_MODEL: str = "gemini-1.5-flash"
+    
+    # Groq Configuration
+    GROQ_API_KEY: str = ""
+    GROQ_MODEL: str = "llama-3.1-70b-versatile"
+    
+    # Cohere Configuration
+    COHERE_API_KEY: str = ""
+    COHERE_MODEL: str = "command-r-plus"
+    
+    # Mistral Configuration
+    MISTRAL_API_KEY: str = ""
+    MISTRAL_MODEL: str = "mistral-large-latest"
+    
+    # Default AI Provider
+    DEFAULT_AI_PROVIDER: str = "openai"
+    
+    # Agent Configuration
+    AGENT_MAX_RETRIES: int = 3
+    AGENT_TIMEOUT: int = 30
+    AGENT_TEMPERATURE: float = 0.7
 
-    # Vector DB Settings
+    # Vector DB Settings (Future)
     # VECTOR_DB_URL: str = "postgresql://postgres:postgres@localhost:5432/app"
     # VECTOR_DB_COLLECTION: str = "ai_embeddings"
 

@@ -35,13 +35,13 @@ function UserSettings() {
       </Heading>
 
       <Tabs.Root defaultValue="my-profile" variant="subtle">
-        <Tabs.List>
+        <Tabs.list>
           {finalTabs.map((tab) => (
             <Tabs.Trigger key={tab.value} value={tab.value}>
               {tab.title}
             </Tabs.Trigger>
           ))}
-        </Tabs.List>
+        </Tabs.list>
         {finalTabs.map((tab) => (
           <Tabs.Content key={tab.value} value={tab.value}>
             <tab.component />

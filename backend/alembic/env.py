@@ -24,7 +24,7 @@ fileConfig(config.config_file_name)
 from sqlmodel import SQLModel  # noqa
 from src.config import settings # noqa
 from src.auth import models # noqa
-from src.agents import models # noqa
+from src.chat import models # noqa
 
 
 target_metadata = SQLModel.metadata

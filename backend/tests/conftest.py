@@ -5,9 +5,9 @@ import pytest
 from fastapi.testclient import TestClient
 from sqlmodel import Session, delete, select
 
-from src.agents.models import Conversation, Message
-from src.agents.services import AIService
 from src.auth.models import Item, User
+from src.chat.models import Conversation, Message
+from src.chat.services import AIService
 from src.config import settings
 from src.db import engine, init_db
 from src.main import app

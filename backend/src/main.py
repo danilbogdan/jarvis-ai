@@ -3,8 +3,9 @@ from fastapi import FastAPI
 from fastapi.routing import APIRoute
 from starlette.middleware.cors import CORSMiddleware
 
-from src.agents.router import router as ai_router
+from src.agents.router import router as agents_router
 from src.auth.router import api_router as auth_router
+from src.chat.router import router as ai_router
 from src.config import settings
 
 
@@ -33,3 +34,4 @@ if settings.all_cors_origins:
 
 app.include_router(auth_router, prefix=settings.API_V1_STR)
 app.include_router(ai_router, prefix=settings.API_V1_STR)
+app.include_router(agents_router, prefix=settings.API_V1_STR)

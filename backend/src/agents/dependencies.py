@@ -1,24 +1,26 @@
-from collections.abc import Generator
-from functools import lru_cache
-from typing import Annotated
+"""
+Dependency injection for agent context and services.
+"""
 
-import openai
+from typing import Optional
+
 from fastapi import Depends
-from sqlmodel import Session
 
-from src.config import settings
-from src.db import engine
-
-
-@lru_cache
-def get_openai_client() -> openai.OpenAI:
-    return openai.OpenAI(api_key=settings.OPENAI_API_KEY)
+from .models import AgentDependencies
+from .services import AgentService, agent_service
 
 
-def get_db() -> Generator[Session, None, None]:
-    with Session(engine) as session:
-        yield session
+def get_agent_service() -> AgentService:
+    """Get the global agent service instance."""
+    return agent_service
 
 
-DbSession = Annotated[Session, Depends(get_db)]
-OpenAIClient = Annotated[openai.OpenAI, Depends(get_openai_client)]
+def get_agent_dependencies(
+    user_id: Optional[str] = None,
+    session_id: Optional[str] = None,
+) -> AgentDependencies:
+    """Create agent dependencies for injection."""
+    return AgentDependencies(
+        user_id=user_id,
+        session_id=session_id,
+    )

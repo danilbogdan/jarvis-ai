@@ -2,7 +2,7 @@ import uuid
 
 from sqlmodel import Session
 
-from src.agents.services import AIService
+from src.chat.services import AIService
 from tests.utils import random_lower_string
 
 

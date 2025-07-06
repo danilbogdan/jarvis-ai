@@ -5,7 +5,7 @@ from pydantic import EmailStr
 from sqlmodel import Field, Relationship, SQLModel
 
 if TYPE_CHECKING:
-    from src.agents.models import Conversation
+    from src.chat.models import Conversation
 
 
 # Shared properties
